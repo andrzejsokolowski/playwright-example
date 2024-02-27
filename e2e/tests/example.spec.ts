@@ -1,6 +1,7 @@
 import { test, expect } from '../fixtures/diffusion';
 
 test('diffusion test', async ({ diffusionPage }) => {
-  await diffusionPage.goto(); //should go to 'baseURL/diffusion'
-  await expect(diffusionPage.page).toHaveURL('/diffusion');
+  await diffusionPage.goto();
+  await diffusionPage.page.pause(); //debug
+  await expect(diffusionPage.promptBox).toHaveText('a photograph of an astronaut riding a horse');
 });

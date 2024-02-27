@@ -1,5 +1,7 @@
 node_modules/
 /e2e/test-output/
 /e2e/playwright-report/
+/test-output/
+/playwright-report/
 /blob-report/
 /playwright/.cache/

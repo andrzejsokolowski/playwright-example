@@ -10,6 +10,8 @@ export default defineConfig({
     baseURL: 'http://localhost:9000/',
     trace: 'on-first-retry',
     headless: false,
+    actionTimeout: 5000,
+    navigationTimeout: 10000,
   },
   outputDir: './e2e/test-output',
 

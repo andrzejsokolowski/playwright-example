@@ -1,0 +1,25 @@
+{
+  "cookies": [
+    {
+      "name": "SESSION",
+      "value": "NTBhZDg4YTYtNjI0Zi00NDBlLTk5NDktZTY3OTNhZDMzYjQy",
+      "domain": "d1crm1.localhost",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://d1crm1.localhost:8090",
+      "localStorage": [
+        {
+          "name": "csmasterlife-6149fd6a-4789-46f7-894f-a525ac9fffdbchat-widget-state",
+          "value": "{\"widgetState\":{},\"chat\":{},\"callback\":{\"isCustomerConnected\":false,\"isClosed\":false,\"queues\":[],\"isStarted\":false},\"evaluation\":{},\"customer\":{\"customerName\":\"masterlife\",\"customerEmail\":\"unknown\"},\"poke\":{\"isRevisit\":false}}"
+        }
+      ]
+    }
+  ]
+}

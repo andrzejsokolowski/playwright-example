@@ -1,24 +1,38 @@
 import { defineConfig, devices } from '@playwright/test';
+import process from 'process';
 import path from 'path';
+
+const onCI = !!process.env['CI'];
+const baseURL = process.env['E2E_BASE_URL'];
 
 export default defineConfig({
   globalSetup: require.resolve('./global_setup/global.setup.ts'),
+
   fullyParallel: false,
-  retries: 0,
-  workers: 2,
-  reporter: [['list'], ['html', { outputFile: './test-output/report.html' }]],
+  retries: onCI ? 1 : 0,
+  workers: onCI ? 4 : 2,
+  reporter: onCI
+    ? 'list'
+    : [['list'], ['html', { outputFile: './test-output/report.html' }]],
   use: {
-    baseURL: 'https://d1crm1.localhost:8090/dashboard',
-    trace: 'retain-on-first-failure',
-    headless: false,
-    actionTimeout: 5000,
-    navigationTimeout: 10000,
+    baseURL: baseURL,
+    trace: 'retain-on-failure',
+    headless: onCI,
+    actionTimeout: 15000,
+    navigationTimeout: 15000,
     ignoreHTTPSErrors: true,
-    testIdAttribute: 'data-dts',
   },
-  outputDir: './test_output',
+  outputDir: path.join(__dirname, 'test-output'),
 
   projects: [
+    {
+      name: 'global setup',
+      testMatch: /global\.setup\.ts/,
+      use: {
+        baseURL: baseURL,
+        headless: onCI,
+      },
+    },
     {
       name: 'chromium',
       use: {

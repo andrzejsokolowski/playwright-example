@@ -1,7 +1,6 @@
 import { APIRequestContext } from '@playwright/test';
 
 import { randomString } from '../fixtures/code-helpers';
-import { getFirstDayToSelect } from '../fixtures/code-helpers';
 import { ResourcePool } from './resource-pool';
 
 export class ClientAPI {

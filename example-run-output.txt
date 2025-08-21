@@ -1,0 +1,28 @@
+> npx playwright test -c e2e/playwright.config.ts
+
+[dotenv@17.2.1] injecting env (3) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+
+Running 14 tests using 1 worker
+
+  -  1 [chromium] › tests\dashboard.spec.ts:6:6 › dashboard basic test @smoke                                                                                                                              
+  -  2 [chromium] › tests\dashboard.spec.ts:10:6 › testAPI                                                                                                                                                 
+[dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+  ✓  3 [chromium] › tests\jsonplaceholder.spec.ts:4:7 › JSONPlaceholder API Tests › retrieve all posts (121ms)
+  ✓  4 [chromium] › tests\jsonplaceholder.spec.ts:14:7 › JSONPlaceholder API Tests › retrieve a single post by ID (55ms)
+  ✓  5 [chromium] › tests\jsonplaceholder.spec.ts:23:7 › JSONPlaceholder API Tests › return 404 for an invalid post ID (49ms)
+  ✓  6 [chromium] › tests\jsonplaceholder.spec.ts:30:7 › JSONPlaceholder API Tests › create a new post (373ms)
+  ✓  7 [chromium] › tests\jsonplaceholder.spec.ts:43:7 › JSONPlaceholder API Tests › update an existing post (393ms)
+  ✓  8 [chromium] › tests\jsonplaceholder.spec.ts:57:7 › JSONPlaceholder API Tests › delete an existing post (142ms)
+  ✓  9 [chromium] › tests\jsonplaceholder.spec.ts:63:7 › JSONPlaceholder API Tests › handle unsupported method (DELETE on /posts without ID) (351ms)
+  ✓  10 [chromium] › tests\jsonplaceholder.spec.ts:68:7 › JSONPlaceholder API Tests › handle invalid content-type for POST (340ms)
+  ✓  11 [chromium] › tests\jsonplaceholder.spec.ts:83:7 › JSONPlaceholder API Tests › handle large payload for post creation (394ms)
+  ✓  12 [chromium] › tests\jsonplaceholder.spec.ts:97:9 › JSONPlaceholder API Tests › create a post with data: foo 1 (144ms)
+  ✓  13 [chromium] › tests\jsonplaceholder.spec.ts:97:9 › JSONPlaceholder API Tests › create a post with data: foo 2 (150ms)
+  ✓  14 [chromium] › tests\jsonplaceholder.spec.ts:97:9 › JSONPlaceholder API Tests › create a post with data: foo 3 (148ms)
+
+  2 skipped
+  12 passed (3.3s)
+
+To open last HTML report run:
+
+  npx playwright show-report e2e\test-output

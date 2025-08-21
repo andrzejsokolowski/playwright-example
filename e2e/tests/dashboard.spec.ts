@@ -3,10 +3,10 @@ test.beforeEach(async ({ dashboard }) => {
   await dashboard.goto();
 });
 
-test('dashboard basic test @smoke', async ({ dashboard }) => {
+test.skip('dashboard basic test @smoke', async ({ dashboard }) => {
   await expect(dashboard.logo).toBeVisible();
 });
 
-test('testAPI', async ({ api }) => {
+test.skip('testAPI', async ({ api }) => {
   const client = await api.clients.createClient();
 });

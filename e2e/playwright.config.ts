@@ -7,7 +7,6 @@ dotenv.config({ path: '.env' });
 
 const onCI = !!process.env['CI'];
 const baseURL = process.env['E2E_BASE_URL'];
-const generateAllure = !!process.env['GENERATE_ALLURE'];
 
 export default defineConfig({
   grepInvert: onCI ? /@noCI/ : undefined, // Ignore @noCI annotated tests in Pipe
@@ -17,9 +16,7 @@ export default defineConfig({
   timeout: 120_000,
   expect: { timeout: 20_000 },
 
-  reporter: generateAllure
-    ? [['list'], ['allure-playwright', { resultsDir: path.join(__dirname, './allure-results') }]]
-    : [['list'], ['html', { outputFolder: path.join(__dirname, './test-output') }]],
+  reporter: 'list',
 
   use: {
     baseURL: baseURL,
@@ -33,17 +30,17 @@ export default defineConfig({
 
   outputDir: path.join(__dirname, 'test-output'),
   projects: [
-    // {
-    //   name: 'login',
-    //   testDir: path.join(__dirname, '_global-setup'),
-    //   testMatch: /global\.setup\.ts/,
-    //   use: {
-    //     ...devices['Desktop Chrome'],
-    //     headless: true,
-    //   },
-    // },
     {
-      name: 'chromium',
+      name: 'login',
+      testDir: path.join(__dirname, '_global-setup'),
+      testMatch: /global\.setup\.ts/,
+      use: {
+        ...devices['Desktop Chrome'],
+        headless: true,
+      },
+    },
+    {
+      name: 'e2e',
       use: {
         ...devices['Desktop Chrome'],
         actionTimeout: 20000,

@@ -1,27 +1,14 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "jsx": "react-jsx",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "esnext",
+    "target": "ES2022",
+    "module": "commonjs",
     "moduleResolution": "node",
-    "noEmit": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": true,
-    "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
     "strict": true,
-    "strictFunctionTypes": true,
-    "strictNullChecks": false,
-    "target": "esNext",
-    "types": ["node"]
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "noUnusedParameters": true,
+    "types": ["node"],
+    "strictNullChecks": false //should fail test, don't have to workaround in ts
   }
 }
